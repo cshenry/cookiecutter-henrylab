@@ -5,10 +5,10 @@
 [Status][status badge]
 [Python Version][github page]
 [CalVer][calver]
-[License][license] `<br>`
+[License][license]
 [Read the documentation][readthedocs page]
 [Tests][github actions page]
-[Codecov][codecov page] `<br>`
+[Codecov][codecov page]
 [pre-commit enabled][pre-commit project]
 [Ruff codestyle][ruff project]
 [Contributor Covenant][code of conduct]

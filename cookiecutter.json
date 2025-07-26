@@ -1,5 +1,5 @@
 {
-  "project_name": "argonne-test-project",
+  "project_name": "argonne-project",
   "package_name": "{{ cookiecutter.project_name.replace('-', '_') }}",
   "friendly_name": "{{ cookiecutter.project_name.replace('-', ' ').title() }}",
   "author": "Christopher Henry",

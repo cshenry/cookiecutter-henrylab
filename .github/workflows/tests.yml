@@ -7,12 +7,6 @@ jobs:
       matrix:
         include:
           - { python-version: "3.13", os: ubuntu-latest }
-          - { python-version: "3.12", os: ubuntu-latest }
-          - { python-version: "3.12", os: windows-latest }
-          - { python-version: "3.12", os: macos-latest }
-          - { python-version: "3.11", os: ubuntu-latest }
-          - { python-version: "3.10", os: ubuntu-latest }
-          - { python-version: "3.9", os: ubuntu-latest }
     name: Python ${{ matrix.python-version }} (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     steps:
@@ -34,7 +28,7 @@ jobs:
         run: cookiecutter --no-input . --output-dir .
       - name: Create git repository
         if: matrix.os != 'windows-latest'
-        working-directory: uv-hypermodern-python
+        working-directory: henrylab
         run: |
           git init
           git config --local user.name "GitHub Action"
@@ -43,7 +37,7 @@ jobs:
           git commit --message="Initial import"
       - name: Create git repository (Windows)
         if: matrix.os == 'windows-latest'
-        working-directory: uv-hypermodern-python
+        working-directory: henrylab
         run: |
           git init
           git config --local user.name "GitHub Action"
@@ -57,16 +51,16 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
       - name: Create uv environment
-        working-directory: uv-hypermodern-python
+        working-directory: henrylab
         run: uv venv
       - name: Install dependencies using uv
-        working-directory: uv-hypermodern-python
+        working-directory: henrylab
         run: uv pip install .
       - name: Compute cache key for pre-commit
         if: matrix.os != 'windows-latest'
         id: cache_key
         shell: python
-        working-directory: uv-hypermodern-python
+        working-directory: henrylab
         run: |
           import hashlib
           import sys
