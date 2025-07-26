@@ -9,12 +9,12 @@ maxdepth: 1
 Quickstart <quickstart>
 guide
 contributing
-Code of Conduct <codeofconduct>
+Code of Conduct <code_of_conduct>
 license
-Changelog <https://github.com/bosd/cookiecutter-uv-hypermodern-python/releases>
+Changelog <https://github.com/chenry/cookiecutter-henrylab/releases>
 ```
 
-```{include}
+```{include} ../README.md
 ---
 start-after: <!-- badges-begin -->
 end-before: <!-- badges-end -->
@@ -27,12 +27,12 @@ based on the [Hypermodern Python][Hypermodern Python] article series.
 ## Usage
 
 ```console
-$ cookiecutter gh:cshenry/cookiecutter-henrylab
+$ cookiecutter gh:chenry/cookiecutter-henrylab
 ```
 
 ## Features
 
-```{include}
+```{include} ../README.md
 ---
 start-after: <!-- features-begin -->
 end-before: <!-- features-end -->
