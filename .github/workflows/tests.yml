@@ -25,13 +25,11 @@ jobs:
 
       - name: Clean up any existing generated projects
         run: |
-          rm -rf /home/runner/work/cookiecutter-henrylab/cookiecutter-henrylab/argonne-project || true
-          rm -rf /home/runner/work/cookiecutter-henrylab/cookiecutter-henrylab/henrylab || true
-          rm -rf /home/runner/work/cookiecutter-henrylab/cookiecutter-henrylab/uv-hypermodern-python || true
-          rm -rf /home/runner/work/cookiecutter-henrylab/cookiecutter-henrylab/hypermodern-python || true
+          rm -rf /home/runner/work/cookiecutter-henrylab/argonne-project || true
+          rm -rf /home/runner/work/cookiecutter-henrylab/henrylab || true
 
       - name: Generate project using Cookiecutter
-        run: cookiecutter --no-input . --output-dir .
+        run: cookiecutter --no-input . --output-dir ../
 
       - name: Create git repository
         if: matrix.os != 'windows-latest'
