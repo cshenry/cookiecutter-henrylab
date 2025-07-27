@@ -23,19 +23,19 @@ def reindent_cookiecutter_json():
 
 def remove_conditional_files():
     """Remove files and directories based on cookiecutter choices."""
-    
+
     # Remove notebooks directory if not requested
     if "{{ cookiecutter.use_notebooks }}" != "true":
         notebooks_dir = Path("notebooks")
         if notebooks_dir.exists():
             shutil.rmtree(notebooks_dir)
-    
+
     # Remove Docker file if not requested
     if "{{ cookiecutter.use_docker }}" != "true":
         dockerfile = Path("Dockerfile")
         if dockerfile.exists():
             dockerfile.unlink()
-    
+
     # Remove FastAPI file if not requested
     if "{{ cookiecutter.use_fastapi }}" != "true":
         api_file = Path("src/{{ cookiecutter.package_name }}/api.py")
