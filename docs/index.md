@@ -6,11 +6,11 @@ hidden: true
 maxdepth: 1
 ---
 
-Quickstart <quickstart>
+quickstart
 guide
 contributing
-Code of Conduct <code_of_conduct>
-license
+code_of_conduct
+license.md
 Changelog <https://github.com/chenry/cookiecutter-henrylab/releases>
 ```
 

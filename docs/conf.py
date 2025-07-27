@@ -9,7 +9,7 @@ extensions = ["sphinx.ext.intersphinx", "myst_parser"]
 intersphinx_mapping = {"mypy": ("https://mypy.readthedocs.io/en/stable/", None)}
 language = "en"
 html_theme = "furo"
-html_logo = "_static/logo.png"
+# html_logo = "_static/logo.png"
 linkcheck_ignore = [
     "codeofconduct.html",
     "https://github.com/pre-commit/pre-commit-hooks#",
