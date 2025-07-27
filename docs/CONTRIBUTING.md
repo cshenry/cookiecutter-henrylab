@@ -146,4 +146,4 @@ After publishing the release, the following automated steps are triggered:
 
 <!-- github-only -->
 
-[code of conduct]: CODE_OF_CONDUCT.md
+[code of conduct]: code_of_conduct.md

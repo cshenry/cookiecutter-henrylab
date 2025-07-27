@@ -10,7 +10,7 @@ quickstart
 guide
 contributing
 code_of_conduct
-license.md
+license
 Changelog <https://github.com/chenry/cookiecutter-henrylab/releases>
 ```
 
