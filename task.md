@@ -17,7 +17,6 @@ I want you to help me fork and customize the [bosd/cookiecutter-uv-hypermodern-p
    - **author: **"Christopher Henry"
    - **email: **"chenry@anl.gov"
    - **license: **"MIT"
-   - use_mkdocs: **true**
 4. Add optional components:
    - ✅ **fastapi** (optional REST API scaffold)
    - **✅ **docker/Dockerfile** support**

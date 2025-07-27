@@ -7,7 +7,7 @@ If you're in a hurry, check out the [quickstart guide](quickstart)
 ### About this project
 
 The Henry Lab Cookiecutteris a general-purpose template for Python libraries and applications,
-released under the [MIT license][mit license] and hosted on [GitHub][GitHub].
+released under the [MIT license][mit license] and hosted on [GitHub][github].
 
 The main objective of this project template is to enable current best practices
 through modern Python tooling. Our goals are to:
@@ -1057,7 +1057,7 @@ The following table gives an overview of the available Nox sessions:
 - - [docs](the-docs-session)
   - Build and serve [Sphinx][sphinx] documentation
   - `3.12`
-  - 
+  -
 - - [docs-build](the-docs-build-session)
   - Build [Sphinx][sphinx] documentation
   - `3.12`
