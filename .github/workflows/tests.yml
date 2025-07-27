@@ -56,7 +56,7 @@ jobs:
           git commit --message="Initial import"
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v6
 
       - name: Create uv environment
         working-directory: ../argonne-project
