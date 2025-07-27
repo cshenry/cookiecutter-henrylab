@@ -1,36 +1,20 @@
----
-myst:
-  substitutions:
-    HLC: "*Henry Lab Cookiecutter*"
----
-
 # User Guide
 
-This is the user guide
-for the [uv hypermodern python cookiecutter][uv hypermodern python cookiecutter],
-a Python template based on the [Hypermodern Python][hypermodern python] article series.
-
 If you're in a hurry, check out the [quickstart guide](quickstart)
-and the [tutorials](tutorials).
 
 ## Introduction
 
 ### About this project
 
-The {{ HLC }} is a general-purpose template for Python libraries and applications,
-released under the [MIT license][mit license]
-and hosted on [GitHub][uv hypermodern python cookiecutter].
+The Henry Lab Cookiecutteris a general-purpose template for Python libraries and applications,
+released under the [MIT license][mit license] and hosted on [GitHub][GitHub].
 
-The main objective of this project template is to
-enable current best practices
-through modern Python tooling.
-Our goals are to:
+The main objective of this project template is to enable current best practices
+through modern Python tooling. Our goals are to:
 
 - focus on simplicity and minimalism,
 - promote code quality through automation, and
 - provide reliable and repeatable processes,
-
-all the way from local testing to publishing releases.
 
 Projects are created from the template using [Cookiecutter][cookiecutter],
 a project scaffolding tool built on top of the [Jinja][jinja] template engine.
@@ -41,8 +25,6 @@ The project template is centered around the following tools:
 - [Nox][nox] for automation of checks and other development tasks
 - [GitHub Actions][github actions] for continuous integration and delivery
 - [Ruff][ruff] for static code analysis and linting
-
-(features)=
 
 ### Features
 
@@ -58,7 +40,7 @@ Here is a detailed list of features for this Python template:
 
 ### Version policy
 
-The {{ HLC }} uses [Calendar Versioning][calendar versioning] with a `YYYY.MM.DD` versioning scheme.
+The Henry Lab Cookiecutter uses [Calendar Versioning][calendar versioning] with a `YYYY.MM.DD` versioning scheme.
 
 The current stable release is [2024.11.23][2024.11.23].
 
@@ -83,82 +65,6 @@ Windows-style line endings (`CRLF`) should therefore never make it into your Git
 Nonetheless, configuring your editor for line feeds is recommended
 to avoid complaints from the [pre-commit][pre-commit] hook for Prettier.
 :::
-
-### Getting Python (Windows)
-
-If you're on Windows,
-download the recommended installer for the latest stable release of Python
-from the official [Python website][python website].
-Before clicking **Install now**,
-enable the option to add Python to your `PATH` environment variable.
-
-Verify your installation by checking the output of the following commands in a new terminal window:
-
-```
-python -VV
-py -VV
-```
-
-Both of these commands should display the latest Python version, 3.10.
-
-For local testing with multiple Python versions,
-repeat these steps for the latest bugfix releases of Python 3.8+,
-with the following changes:
-
-- Do _not_ enable the option to add Python to the `PATH` environment variable.
-- `py -VV` and `python -VV` should still display the version of the latest stable release.
-- `py -X.Y -VV` (e.g. `py -3.8 -VV`) should display the exact version you just installed.
-
-Note that binary installers are not provided for security releases.
-
-### Getting Python (Mac, Linux, Unix)
-
-If you're on a Mac, Linux, or Unix system,
-use [pyenv][pyenv] for installing and managing Python versions.
-Please refer to the documentation of this project
-for detailed installation and usage instructions.
-(The following instructions assume that
-your system already has [bash][bash] and [curl][curl] installed.)
-
-Install [pyenv][pyenv] like this:
-
-```console
-$ curl https://pyenv.run | bash
-```
-
-Add the following lines to your `~/.bashrc`:
-
-```sh
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-```
-
-Install the Python build dependencies for your platform,
-using one of the commands listed in the [official instructions][pyenv wiki].
-
-Install the latest point release of every supported Python version.
-This project template supports Python 3.8, 3.9, 3.10, 3.11, and 3.12.
-
-```console
-$ pyenv install 3.8.19
-$ pyenv install 3.9.19
-$ pyenv install 3.10.14
-$ pyenv install 3.11.9
-$ pyenv install 3.12.9
-```
-
-After creating your project (see [below](creating-a-project)),
-you can make these Python versions accessible in the project directory,
-using the following command:
-
-```console
-$ pyenv local 3.12.9 3.11.9 3.10.14 3.9.19 3.8.19
-```
-
-The first version listed is the one used when you type plain `python`.
-Every version can be used by invoking `python<major.minor>`.
-For example, use `python3.12` to invoke Python 3.12.
 
 ### Requirements
 
@@ -210,8 +116,7 @@ $ uv upgrade
 ### Creating a project
 
 Create a project from this template
-by pointing Cookiecutter to its [GitHub repository][uv hypermodern python cookiecutter].
-Use the `--checkout` option with the [current stable release][2024.11.23]:
+by pointing Cookiecutter to its github repository:
 
 ```console
 $ cookiecutter gh:cshenry/cookiecutter-henrylab
@@ -1152,7 +1057,7 @@ The following table gives an overview of the available Nox sessions:
 - - [docs](the-docs-session)
   - Build and serve [Sphinx][sphinx] documentation
   - `3.12`
-  -
+  - 
 - - [docs-build](the-docs-build-session)
   - Build [Sphinx][sphinx] documentation
   - `3.12`
