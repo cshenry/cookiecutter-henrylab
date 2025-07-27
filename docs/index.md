@@ -21,8 +21,8 @@ end-before: <!-- badges-end -->
 ---
 ```
 
-[Cookiecutter][Cookiecutter] template for a Python package
-based on the [Hypermodern Python][Hypermodern Python] article series.
+[Cookiecutter][cookiecutter] template for a Python package
+based on the [Hypermodern Python][hypermodern python] article series.
 
 ## Usage
 
@@ -65,7 +65,7 @@ The project template is centered around the following tools:
 
 ### Why is this Python template called "hypermodern"?
 
-[Hypermodernism][Hypermodernism] is a school of chess that dates back to more than a century ago.
+[Hypermodernism][hypermodernism] is a school of chess that dates back to more than a century ago.
 If this setup ever goes out of fashion,
 I can pretend it was my secret plan from the start.
 All images on the

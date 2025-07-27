@@ -22,17 +22,17 @@ jobs:
           pip install --constraint=.github/workflows/constraints.txt pip
           pipx install --pip-args=--constraint=.github/workflows/constraints.txt cookiecutter
           pipx install --pip-args=--constraint=.github/workflows/constraints.txt nox
-      
+
       - name: Clean up any existing generated projects
         run: |
           rm -rf argonne-project || true
           rm -rf henrylab || true
           rm -rf uv-hypermodern-python || true
           rm -rf hypermodern-python || true
-      
+
       - name: Generate project using Cookiecutter
         run: cookiecutter --no-input . --output-dir .
-      
+
       - name: Create git repository
         if: matrix.os != 'windows-latest'
         working-directory: argonne-project
@@ -42,7 +42,7 @@ jobs:
           git config --local user.email "action@github.com"
           git add .
           git commit --message="Initial import"
-      
+
       - name: Create git repository (Windows)
         if: matrix.os == 'windows-latest'
         working-directory: argonne-project
@@ -56,18 +56,18 @@ jobs:
           $ErrorActionPreference = "Stop"
           git add --renormalize .
           git commit --message="Initial import"
-      
+
       - name: Install uv
         uses: astral-sh/setup-uv@v5
-      
+
       - name: Create uv environment
         working-directory: argonne-project
         run: uv venv
-      
+
       - name: Install dependencies using uv
         working-directory: argonne-project
         run: uv pip install .
-      
+
       - name: Compute cache key for pre-commit
         if: matrix.os != 'windows-latest'
         id: cache_key
@@ -92,7 +92,7 @@ jobs:
           key: ${{ steps.cache_key.outputs.cache_key_result }}-${{ hashFiles('argonne-project/.pre-commit-config.yaml') }}
           restore-keys: |
             ${{ steps.cache_key.outputs.cache_key_result }}-
-      
+
       - name: Run test suite using Nox
         working-directory: argonne-project
         run: uv run nox --force-color --python=${{ matrix.python-version }}

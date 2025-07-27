@@ -2,7 +2,7 @@
 
 ## Requirements
 
-Install [Cookiecutter][Cookiecutter]:
+Install [Cookiecutter][cookiecutter]:
 
 ```console
 $ pipx install cookiecutter
@@ -14,7 +14,7 @@ Install [uv][uv] by downloading and running the install script:
 $ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Install [Nox][Nox]:
+Install [Nox][nox]:
 
 ```console
 $ pipx install nox
@@ -86,13 +86,13 @@ $ nox -s pre-commit -- install
 
 ### GitHub
 
-1. Sign up at [GitHub][GitHub].
+1. Sign up at [GitHub][github].
 2. Create an empty repository for your project.
 3. Follow the instructions to push an existing repository from the command line.
 
 ### PyPI
 
-1. Sign up at [PyPI][PyPI].
+1. Sign up at [PyPI][pypi].
 2. Go to the Account Settings on PyPI,
    generate an API token, and copy it.
 3. Go to the repository settings on GitHub, and
@@ -100,7 +100,7 @@ $ nox -s pre-commit -- install
 
 ### TestPyPI
 
-1. Sign up at [TestPyPI][TestPyPI].
+1. Sign up at [TestPyPI][testpypi].
 2. Go to the Account Settings on TestPyPI,
    generate an API token, and copy it.
 3. Go to the repository settings on GitHub, and
@@ -108,12 +108,12 @@ $ nox -s pre-commit -- install
 
 ### Codecov
 
-1. Sign up at [Codecov][Codecov].
+1. Sign up at [Codecov][codecov].
 2. Install their GitHub app.
 
 ### Read the Docs
 
-1. Sign up at [Read the Docs][Read the Docs].
+1. Sign up at [Read the Docs][read the docs].
 2. Import your GitHub repository, using the button _Import a Project_.
 3. Install the GitHub webhook,
    using the button _Add integration_
@@ -146,17 +146,17 @@ by applying labels to them, like this:
 
 | Pull Request Label | Section in Release Notes     |
 | ------------------ | ---------------------------- |
-| `breaking`       | 💥 Breaking Changes          |
-| `enhancement`    | 🚀 Features                  |
-| `removal`        | 🔥 Removals and Deprecations |
-| `bug`            | 🐞 Fixes                     |
-| `performance`    | 🐎 Performance               |
-| `testing`        | 🚨 Testing                   |
-| `ci`             | 👷 Continuous Integration    |
-| `documentation`  | 📚 Documentation             |
-| `refactoring`    | 🔨 Refactoring               |
-| `style`          | 💄 Style                     |
-| `dependencies`   | 📦 Dependencies              |
+| `breaking`         | 💥 Breaking Changes          |
+| `enhancement`      | 🚀 Features                  |
+| `removal`          | 🔥 Removals and Deprecations |
+| `bug`              | 🐞 Fixes                     |
+| `performance`      | 🐎 Performance               |
+| `testing`          | 🚨 Testing                   |
+| `ci`               | 👷 Continuous Integration    |
+| `documentation`    | 📚 Documentation             |
+| `refactoring`      | 🔨 Refactoring               |
+| `style`            | 💄 Style                     |
+| `dependencies`     | 📦 Dependencies              |
 
 <!-- table-release-drafter-sections-end -->
 

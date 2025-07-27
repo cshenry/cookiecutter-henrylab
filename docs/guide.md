@@ -3,11 +3,12 @@ myst:
   substitutions:
     HLC: "*Henry Lab Cookiecutter*"
 ---
+
 # User Guide
 
 This is the user guide
 for the [uv hypermodern python cookiecutter][uv hypermodern python cookiecutter],
-a Python template based on the [Hypermodern Python][Hypermodern Python] article series.
+a Python template based on the [Hypermodern Python][hypermodern python] article series.
 
 If you're in a hurry, check out the [quickstart guide](quickstart)
 and the [tutorials](tutorials).
@@ -17,7 +18,7 @@ and the [tutorials](tutorials).
 ### About this project
 
 The {{ HLC }} is a general-purpose template for Python libraries and applications,
-released under the [MIT license][MIT license]
+released under the [MIT license][mit license]
 and hosted on [GitHub][uv hypermodern python cookiecutter].
 
 The main objective of this project template is to
@@ -31,15 +32,15 @@ Our goals are to:
 
 all the way from local testing to publishing releases.
 
-Projects are created from the template using [Cookiecutter][Cookiecutter],
-a project scaffolding tool built on top of the [Jinja][Jinja] template engine.
+Projects are created from the template using [Cookiecutter][cookiecutter],
+a project scaffolding tool built on top of the [Jinja][jinja] template engine.
 
 The project template is centered around the following tools:
 
 - [uv][uv] for packaging and dependency management
-- [Nox][Nox] for automation of checks and other development tasks
-- [GitHub Actions][GitHub Actions] for continuous integration and delivery
-- [Ruff][Ruff] for static code analysis and linting
+- [Nox][nox] for automation of checks and other development tasks
+- [GitHub Actions][github actions] for continuous integration and delivery
+- [Ruff][ruff] for static code analysis and linting
 
 (features)=
 
@@ -57,7 +58,7 @@ Here is a detailed list of features for this Python template:
 
 ### Version policy
 
-The {{ HLC }} uses [Calendar Versioning][Calendar Versioning] with a `YYYY.MM.DD` versioning scheme.
+The {{ HLC }} uses [Calendar Versioning][calendar versioning] with a `YYYY.MM.DD` versioning scheme.
 
 The current stable release is [2024.11.23][2024.11.23].
 
@@ -72,11 +73,11 @@ You need a recent Windows, Linux, Unix, or Mac system with [git][git] installed.
 :::{note}
 When working with this template on Windows,
 configure your text editor or IDE
-to use only [UNIX-style line endings][UNIX-style line endings] (line feeds).
+to use only [UNIX-style line endings][unix-style line endings] (line feeds).
 
 The project template contains a [.gitattributes][.gitattributes] file
 which enables end-of-line normalization for your entire working tree.
-Additionally, the [Prettier][Prettier] code formatter converts line endings to line feeds.
+Additionally, the [Prettier][prettier] code formatter converts line endings to line feeds.
 Windows-style line endings (`CRLF`) should therefore never make it into your Git repository.
 
 Nonetheless, configuring your editor for line feeds is recommended
@@ -87,7 +88,7 @@ to avoid complaints from the [pre-commit][pre-commit] hook for Prettier.
 
 If you're on Windows,
 download the recommended installer for the latest stable release of Python
-from the official [Python website][Python website].
+from the official [Python website][python website].
 Before clicking **Install now**,
 enable the option to add Python to your `PATH` environment variable.
 
@@ -172,11 +173,11 @@ use [pip install][pip install] with the `--user` option instead.
 
 You need four tools to use this template:
 
-- [Cookiecutter][Cookiecutter] to create projects from the template,
+- [Cookiecutter][cookiecutter] to create projects from the template,
 - [uv][uv] to manage packaging and dependencies
-- [Nox][Nox] to automate checks and other tasks
+- [Nox][nox] to automate checks and other tasks
 
-Install [Cookiecutter][Cookiecutter] using pipx:
+Install [Cookiecutter][cookiecutter] using pipx:
 
 ```console
 $ pipx install cookiecutter
@@ -188,7 +189,7 @@ Install [uv][uv] by downloading and running the install script:
 $ curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
-Install [Nox][Nox] using pipx:
+Install [Nox][nox] using pipx:
 
 ```console
 $ pipx install nox
@@ -266,14 +267,14 @@ Here is a complete list of the project variables defined by this template:
 :::
 
 :::{note}
-The initial project version should be the latest release on [PyPI][PyPI],
+The initial project version should be the latest release on [PyPI][pypi],
 or `0.0.0` for an unreleased package.
 See [The Release workflow](the-release-workflow) for details.
 :::
 
 Your choices are recorded in the file `.cookiecutter.json` in the generated project,
 together with the URL of this Cookiecutter template.
-Having this [JSON][JSON] file in the project makes it possible later on
+Having this [JSON][json] file in the project makes it possible later on
 to update your project with changes from the Cookiecutter template,
 using tools such as [cupper][cupper].
 
@@ -286,7 +287,7 @@ whereas the package name uses underscores (_snake case_).
 
 ### Uploading to GitHub
 
-This project template is designed for use with [GitHub][GitHub].
+This project template is designed for use with [GitHub][github].
 After generating the project,
 your next steps are to create a Git repository and upload it to GitHub.
 
@@ -310,7 +311,7 @@ which is the [default branch name for GitHub repositories][github renaming].
 $ git branch --move --force main
 ```
 
-Create an empty repository on [GitHub][GitHub],
+Create an empty repository on [GitHub][github],
 using the project name you chose when you generated the project.
 
 :::{note}
@@ -381,8 +382,8 @@ For more details on these files, refer to the section [The test suite](the-test-
 
 :::
 
-The project documentation is written in [Markdown][Markdown].
-The documentation files in the top-level directory are rendered on [GitHub][GitHub]:
+The project documentation is written in [Markdown][markdown].
+The documentation files in the top-level directory are rendered on [GitHub][github]:
 
 :::{list-table} Documentation files (top-level)
 :widths: auto
@@ -399,7 +400,7 @@ The documentation files in the top-level directory are rendered on [GitHub][GitH
 :::
 
 The files in the `docs` directory are
-built using [Sphinx](documentation) and [MyST][MyST].
+built using [Sphinx](documentation) and [MyST][myst].
 The Sphinx documentation is hosted on [Read the Docs](read-the-docs-integration):
 
 :::{list-table} Documentation files (Sphinx)
@@ -564,7 +565,7 @@ The file `test_main.py` contains tests for the `__main__` module.
 
 Initially, the test suite contains a single test case,
 checking whether the program exits with a status code of zero.
-It also provides a [test fixture][test fixture] using [click.testing.CliRunner][click.testing.CliRunner],
+It also provides a [test fixture][test fixture] using [click.testing.CliRunner][click.testing.clirunner],
 a helper class for invoking the program from within tests.
 
 For details on how to run the test suite,
@@ -574,8 +575,8 @@ refer to the section [The tests session](the-tests-session).
 
 ### Documentation
 
-The project documentation is written in [Markdown][Markdown]
-and processed by the [Sphinx][Sphinx] documentation engine using the [MyST][MyST] extension.
+The project documentation is written in [Markdown][markdown]
+and processed by the [Sphinx][sphinx] documentation engine using the [MyST][myst] extension.
 
 The top-level directory contains several stand-alone documentation files:
 
@@ -668,7 +669,7 @@ see [The docs session](the-docs-session).
 The configuration file for the Python package is located
 in the root directory of the project,
 and named `pyproject.toml`.
-It uses the [TOML][TOML] configuration file format,
+It uses the [TOML][toml] configuration file format,
 and contains two sections---_tables_ in TOML parlance---,
 specified in [PEP 517][pep 517] and [518][pep 518]:
 
@@ -677,19 +678,19 @@ specified in [PEP 517][pep 517] and [518][pep 518]:
   used to build a distribution package for the project.
   This template uses [uv][uv] as the build system.
 - The `tool` table contains sub-tables
-  where tools can store configuration under their [PyPI][PyPI] name.
+  where tools can store configuration under their [PyPI][pypi] name.
 
 :::{list-table} Tool configurations in pyproject.toml
 :widths: auto
 
 - - `tool.coverage`
-  - Configuration for [Coverage.py][Coverage.py]
+  - Configuration for [Coverage.py][coverage.py]
 - - `tool.mypy`
   - Configuration for [mypy][mypy]
 - - `tool.uv`
   - Configuration for [uv][uv]
 - - `tool.ruff`
-  - Configuration for [Ruff][Ruff]
+  - Configuration for [Ruff][ruff]
 
 :::
 
@@ -753,7 +754,7 @@ By default, version constraints can have both a lower and an upper bound:
 - The upper bound allows users to upgrade to newer releases of dependencies,
   as long as the version number does not indicate a breaking change.
 
-According to the [Semantic Versioning][Semantic Versioning] standard,
+According to the [Semantic Versioning][semantic versioning] standard,
 only major releases may contain breaking changes,
 once a project has reached version 1.0.0.
 A major release is one that increments the major version
@@ -816,7 +817,7 @@ For these reasons, the lock file should be kept under source control.
 
 ### Dependencies
 
-This project template has a core dependency on [Click][Click],
+This project template has a core dependency on [Click][click],
 a library for creating command-line interfaces.
 The template also comes with various development dependencies.
 See the table below for an overview of the dependencies of generated projects:
@@ -999,7 +1000,7 @@ as described in the section [Using Nox](using-nox).
 :::{note}
 With the {{ HLC }},
 building and distributing your package
-is taken care of by [GitHub Actions][GitHub Actions].
+is taken care of by [GitHub Actions][github actions].
 For more information,
 see the section [The Release workflow](the-release-workflow).
 :::
@@ -1025,7 +1026,7 @@ binary packages in the [wheel][wheel] format.
 
 Publishing the package is done with the [python publish][python publish] command,
 which uploads the distribution packages
-to your account on [PyPI][PyPI],
+to your account on [PyPI][pypi],
 the official Python package registry.
 
 ### Installing the package
@@ -1061,7 +1062,7 @@ You can always install your project into a virtual environment with plain [pip][
 
 ## Using Nox
 
-[Nox][Nox] automates testing in multiple Python environments.
+[Nox][nox] automates testing in multiple Python environments.
 Like its older sibling [tox][tox],
 Nox makes it easy to run any kind of job in an isolated environment,
 with only those dependencies installed that the job needs.
@@ -1145,15 +1146,15 @@ The following table gives an overview of the available Nox sessions:
   - Python
   - Default
 - - [coverage](the-coverage-session)
-  - Report coverage with [Coverage.py][Coverage.py]
+  - Report coverage with [Coverage.py][coverage.py]
   - `3.12`
   - (✓)
 - - [docs](the-docs-session)
-  - Build and serve [Sphinx][Sphinx] documentation
+  - Build and serve [Sphinx][sphinx] documentation
   - `3.12`
-  - 
+  -
 - - [docs-build](the-docs-build-session)
-  - Build [Sphinx][Sphinx] documentation
+  - Build [Sphinx][sphinx] documentation
   - `3.12`
   - ✓
 - - [mypy](the-mypy-session)
@@ -1169,7 +1170,7 @@ The following table gives an overview of the available Nox sessions:
   - `3.8` … `3.12`
   - ✓
 - - [typeguard](the-typeguard-session)
-  - Type-check with [Typeguard][Typeguard]
+  - Type-check with [Typeguard][typeguard]
   - `3.12`
   - ✓
 - - [xdoctest](the-xdoctest-session)
@@ -1319,7 +1320,7 @@ combining the coverage data collected
 during the [tests session](the-tests-session).
 If the total coverage is below 100%,
 the coverage session fails.
-Code coverage is measured using [Coverage.py][Coverage.py].
+Code coverage is measured using [Coverage.py][coverage.py].
 
 The coverage session is triggered by the tests session,
 and runs after all other sessions have completed.
@@ -1339,7 +1340,7 @@ in the `htmlcov` directory:
 $ nox -rs coverage -- html
 ```
 
-[Coverage.py][Coverage.py] is configured in the `pyproject.toml` file,
+[Coverage.py][coverage.py] is configured in the `pyproject.toml` file,
 using the `tool.coverage` table.
 The configuration informs the tool about your package name and source tree layout.
 It also enables branch analysis and the display of line numbers for missing coverage,
@@ -1347,7 +1348,7 @@ and specifies the target coverage percentage.
 Coverage is measured for the package as well as [the test suite itself][batchelder include].
 
 During continuous integration,
-coverage data is uploaded to the [Codecov][Codecov] reporting service.
+coverage data is uploaded to the [Codecov][codecov] reporting service.
 For details, see the sections about
 [Codecov](codecov-integration) and
 [The Tests workflow](the-tests-workflow).
@@ -1356,7 +1357,7 @@ For details, see the sections about
 
 ### The typeguard session
 
-[Typeguard][Typeguard] is a runtime type checker and [pytest][pytest] plugin.
+[Typeguard][typeguard] is a runtime type checker and [pytest][pytest] plugin.
 It can type-check function calls during test runs via an [import hook][import hook].
 
 Typeguard checks that arguments passed to functions
@@ -1367,7 +1368,7 @@ In the case of generator functions,
 Typeguard checks the yields, sends and the return value
 against the `Generator` annotation.
 
-Run [Typeguard][Typeguard] using Nox:
+Run [Typeguard][typeguard] using Nox:
 
 ```console
 $ nox --session=typeguard
@@ -1460,7 +1461,7 @@ The session is described in more detail in the section [The pre-commit session](
 
 ### Running pre-commit from git
 
-When installed as a [Git hook][Git hook],
+When installed as a [Git hook][git hook],
 pre-commit runs automatically every time you invoke `git commit`.
 The commit is aborted if any check fails.
 When invoked in this mode, pre-commit only runs on files staged for the commit.
@@ -1636,32 +1637,32 @@ The {{ HLC }} comes with a pre-commit configuration consisting of the following 
 :widths: auto
 
 - - [prettier][prettier]
-  - Run the [Prettier][Prettier] code formatter
+  - Run the [Prettier][prettier] code formatter
 - - [check-added-large-files][check-added-large-files]
   - Prevent giant files from being committed
 - - [check-toml][check-toml]
-  - Validate [TOML][TOML] files
+  - Validate [TOML][toml] files
 - - [check-yaml][check-yaml]
-  - Validate [YAML][YAML] files
+  - Validate [YAML][yaml] files
 - - [end-of-file-fixer][end-of-file-fixer]
   - Ensure files are terminated by a single newline
 - - [trailing-whitespace][trailing-whitespace]
   - Ensure lines do not contain trailing whitespace
 - - [ruff][ruff]
-  - Run the [Ruff][Ruff] linter and code formatter
+  - Run the [Ruff][ruff] linter and code formatter
 
 :::
 
 ### The Prettier hook
 
-[Prettier][Prettier] is an opinionated code formatter for many languages,
+[Prettier][prettier] is an opinionated code formatter for many languages,
 including YAML, Markdown, and JavaScript.
 Like Ruff, it has few options,
 and the {{ HLC }} uses none of them.
 
 ## Linting with Ruff
 
-[Ruff][Ruff] is an extremely fast Python linter, written in Rust. It supports many rules from Flake8, isort, pyupgrade, and other tools, effectively consolidating all of your linting needs in one place. The {{ HLC }} integrates Ruff via a [pre-commit][pre-commit] hook, ensuring your code is consistently checked before each commit.
+[Ruff][ruff] is an extremely fast Python linter, written in Rust. It supports many rules from Flake8, isort, pyupgrade, and other tools, effectively consolidating all of your linting needs in one place. The {{ HLC }} integrates Ruff via a [pre-commit][pre-commit] hook, ensuring your code is consistently checked before each commit.
 
 ### Configuring Ruff
 
@@ -1712,7 +1713,7 @@ For a complete list of available rules, configuration options, and plugin inform
 ## Type-checking with mypy
 
 :::{note}
-[Type annotations][Type annotations], first introduced in Python 3.5,
+[Type annotations][type annotations], first introduced in Python 3.5,
 are a way to annotate functions and variables with types.
 With appropriate tooling,
 they can make your programs easier to understand, debug, and maintain.
@@ -1761,13 +1762,13 @@ what they do, and how to set them up for your repository.
 
 ### PyPI
 
-[PyPI][PyPI] is the official Python Package Index.
+[PyPI][pypi] is the official Python Package Index.
 Uploading your package to PyPI allows others to
 download and install it to their system.
 
 Follow these steps to set up PyPI for your repository:
 
-1. Sign up at [PyPI][PyPI].
+1. Sign up at [PyPI][pypi].
 2. Go to the Account Settings on PyPI,
    generate an API token, and copy it.
 3. Go to the repository settings on GitHub, and
@@ -1778,12 +1779,12 @@ via the [Release workflow](the-release-workflow).
 
 ### TestPyPI
 
-[TestPyPI][TestPyPI] is a test instance of the Python package registry.
+[TestPyPI][testpypi] is a test instance of the Python package registry.
 It allows you to check your release before uploading it to the real index.
 
 Follow these steps to set up TestPyPI for your repository:
 
-1. Sign up at [TestPyPI][TestPyPI].
+1. Sign up at [TestPyPI][testpypi].
 2. Go to the Account Settings on TestPyPI,
    generate an API token, and copy it.
 3. Go to the repository settings on GitHub, and
@@ -1796,11 +1797,11 @@ via the [Release workflow](the-release-workflow).
 
 ### Codecov
 
-[Codecov][Codecov] is a reporting service for code coverage.
+[Codecov][codecov] is a reporting service for code coverage.
 
 Follow these steps to set up Codecov for your repository:
 
-1. Sign up at [Codecov][Codecov].
+1. Sign up at [Codecov][codecov].
 2. Install their GitHub app.
 
 The configuration is included in the repository,
@@ -1814,7 +1815,7 @@ The [Tests workflow](the-tests-workflow) uploads the coverage data.
 
 ### Dependabot
 
-[Dependabot][Dependabot] creates pull requests with automated dependency updates.
+[Dependabot][dependabot] creates pull requests with automated dependency updates.
 
 Please refer to the [official documentation][dependabot docs] for more details.
 
@@ -1848,11 +1849,11 @@ It manages the following dependencies:
 
 ### Read the Docs
 
-[Read the Docs][Read the Docs] automates the building, versioning, and hosting of documentation.
+[Read the Docs][read the docs] automates the building, versioning, and hosting of documentation.
 
 Follow these steps to set up Read the Docs for your repository:
 
-1. Sign up at [Read the Docs][Read the Docs].
+1. Sign up at [Read the Docs][read the docs].
 2. Import your GitHub repository,
    using the button _Import a Project_.
 3. Install the GitHub [webhook][readthedocs webhooks],
@@ -1892,11 +1893,11 @@ don't forget to update the requirements file as well.
 
 ## GitHub Actions workflows
 
-The {{ HLC }} uses [GitHub Actions][GitHub Actions]
+The {{ HLC }} uses [GitHub Actions][github actions]
 to implement continuous integration and delivery.
 With GitHub Actions,
 you define so-called workflows
-using [YAML][YAML] files located in the `.github/workflows` directory.
+using [YAML][yaml] files located in the `.github/workflows` directory.
 
 A _workflow_ is an automated process
 consisting of one or many jobs,
@@ -1927,11 +1928,11 @@ The {{ HLC }} defines the following workflows:
   - Trigger
 - - [Tests](the-tests-workflow)
   - `tests.yml`
-  - Run the test suite with [Nox][Nox]
+  - Run the test suite with [Nox][nox]
   - Push, PR
 - - [Release](the-release-workflow)
   - `release.yml`
-  - Upload the package to [PyPI][PyPI]
+  - Upload the package to [PyPI][pypi]
   - Push (default branch)
 - - [Labeler](the-labeler-workflow)
   - `labeler.yml`
@@ -1985,7 +1986,7 @@ GitHub Actions workflows install the following tools:
 - [pip][pip]
 - [virtualenv][virtualenv]
 - [uv][uv]
-- [Nox][Nox]
+- [Nox][nox]
 
 These dependencies are pinned using a [constraints file][constraints file]
 located in `.github/workflow/constraints.txt`.
@@ -2043,10 +2044,10 @@ as shown in the table below:
 
 The workflow uploads the generated documentation as a [workflow artifact][github actions artifacts].
 Building the documentation only serves the purpose of catching issues in pull requests.
-Builds on [Read the Docs][Read the Docs] happen independently.
+Builds on [Read the Docs][read the docs] happen independently.
 
-The workflow also uploads coverage data to [Codecov][Codecov] after running tests.
-It generates a coverage report in [Cobertura][Cobertura] XML format,
+The workflow also uploads coverage data to [Codecov][codecov] after running tests.
+It generates a coverage report in [Cobertura][cobertura] XML format,
 using the [coverage session](the-coverage-session).
 The report is uploaded
 using the official [Codecov GitHub Action][codecov/codecov-action].
@@ -2058,7 +2059,7 @@ The Tests workflow uses the following GitHub Actions:
 - [actions/download-artifact][actions/download-artifact] to download the coverage data of each tests session
 - [actions/cache][actions/cache] for caching pre-commit environments
 - [actions/upload-artifact][actions/upload-artifact] to upload the generated documentation and the coverage data of each tests session
-- [codecov/codecov-action][codecov/codecov-action] for uploading to [Codecov][Codecov]
+- [codecov/codecov-action][codecov/codecov-action] for uploading to [Codecov][codecov]
 
 The Tests workflow is defined in `.github/workflows/tests.yml`.
 
@@ -2066,18 +2067,18 @@ The Tests workflow is defined in `.github/workflows/tests.yml`.
 
 ### The Release workflow
 
-The Release workflow publishes your package on [PyPI][PyPI], the Python Package Index.
+The Release workflow publishes your package on [PyPI][pypi], the Python Package Index.
 The workflow also creates a version tag in the GitHub repository,
-and publishes a GitHub Release using [Release Drafter][Release Drafter].
+and publishes a GitHub Release using [Release Drafter][release drafter].
 The workflow is triggered on every push to the default branch.
 
 Release steps only run if the package version was bumped.
 If the package version did not change,
-the package is instead uploaded to [TestPyPI][TestPyPI] as a prerelease,
+the package is instead uploaded to [TestPyPI][testpypi] as a prerelease,
 and only a draft GitHub Release is created.
 TestPyPI is a test instance of the Python Package Index.
 
-The Release workflow uses API tokens to access [PyPI][PyPI] and [TestPyPI][TestPyPI].
+The Release workflow uses API tokens to access [PyPI][pypi] and [TestPyPI][testpypi].
 You can generate these tokens from your account settings on these services.
 The tokens need to be stored as secrets in the repository settings on GitHub:
 
@@ -2085,9 +2086,9 @@ The tokens need to be stored as secrets in the repository settings on GitHub:
 :widths: auto
 
 - - `PYPI_TOKEN`
-  - [PyPI][PyPI] API token
+  - [PyPI][pypi] API token
 - - `TEST_PYPI_TOKEN`
-  - [TestPyPI][TestPyPI] API token
+  - [TestPyPI][testpypi] API token
 
 :::
 
@@ -2131,7 +2132,7 @@ or different compared to the `labels.yml` file content.
 The workflow does not delete labels already configured in the GitHub UI
 and not in the `labels.yml` file.
 You can change this behavior and add ignore patterns
-in the settings of the workflow (see [GitHub Labeler][GitHub Labeler] documentation).
+in the settings of the workflow (see [GitHub Labeler][github labeler] documentation).
 
 The Labeler workflow uses the following GitHub Actions:
 
@@ -2242,7 +2243,7 @@ This triggers the following automated steps:
 - [The test suite runs against the main branch](the-tests-workflow).
 - [The draft GitHub Release is updated](the-release-workflow).
 - [A pre-release of the package is uploaded to TestPyPI](the-release-workflow).
-- [Read the Docs][Read the Docs] rebuilds the _latest_ version of the documentation.
+- [Read the Docs][read the docs] rebuilds the _latest_ version of the documentation.
 
 In your local repository,
 update the main branch:
@@ -2284,14 +2285,14 @@ $ git push origin release
 ```
 
 If you're not sure which version number to choose,
-read about [Semantic Versioning][Semantic Versioning].
+read about [Semantic Versioning][semantic versioning].
 Versioning rules for Python packages are laid down in [PEP 440][pep 440].
 
 Before merging the pull request for the release,
 go through the following checklist:
 
 - The pull request passes all checks.
-- The development release on [TestPyPI][TestPyPI] looks good.
+- The development release on [TestPyPI][testpypi] looks good.
 - All pull requests for the release have been merged.
 
 Merging the pull request triggers the
@@ -2302,11 +2303,11 @@ This workflow performs the following automated steps:
 - Publish a GitHub Release.
 - Apply a Git tag to the repository.
 
-[Read the Docs][Read the Docs] automatically builds a new stable version of the documentation.
+[Read the Docs][read the docs] automatically builds a new stable version of the documentation.
 
 ## The Hypermodern Python blog
 
-The project setup is described in detail in the [Hypermodern Python][Hypermodern Python] article series:
+The project setup is described in detail in the [Hypermodern Python][hypermodern python] article series:
 
 - [Chapter 1: Setup][hypermodern python chapter 1]
 - [Chapter 2: Testing][hypermodern python chapter 2]

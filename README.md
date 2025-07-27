@@ -15,9 +15,9 @@
 
 <!-- badges-end -->
 
-[Cookiecutter][Cookiecutter] template for scientific Python projects at in the Henry Lab at **Argonne National Laboratory**.
+[Cookiecutter][cookiecutter] template for scientific Python projects at in the Henry Lab at **Argonne National Laboratory**.
 
-Based on the [Hypermodern Python][Hypermodern Python] article series and customized for scientific computing workflows.
+Based on the [Hypermodern Python][hypermodern python] article series and customized for scientific computing workflows.
 
 ✨📚✨ [Read the full documentation][readthedocs page]
 
@@ -42,25 +42,25 @@ cookiecutter gh:cshenry/cookiecutter-henrylab
 <!-- features-begin -->
 
 - Packaging and dependency management with [uv][uv]
-- Test automation with [Nox][Nox]
+- Test automation with [Nox][nox]
 - Linting with [pre-commit][pre-commit] and [ruff][ruff]
-- Continuous integration with [GitHub Actions][GitHub Actions]
-- Documentation with [Sphinx][Sphinx], [MyST][MyST], and [Read the Docs][Read the Docs] using the [furo][furo] theme
-- Automated uploads to [PyPI][PyPI] and [TestPyPI][TestPyPI]
-- Automated release notes with [Release Drafter][Release Drafter]
-- Automated dependency updates with [Dependabot][Dependabot]
-- Code formatting with [ruff][ruff] and [Prettier][Prettier]
+- Continuous integration with [GitHub Actions][github actions]
+- Documentation with [Sphinx][sphinx], [MyST][myst], and [Read the Docs][read the docs] using the [furo][furo] theme
+- Automated uploads to [PyPI][pypi] and [TestPyPI][testpypi]
+- Automated release notes with [Release Drafter][release drafter]
+- Automated dependency updates with [Dependabot][dependabot]
+- Code formatting with [ruff][ruff] and [Prettier][prettier]
 - Import sorting with [ruff][ruff]
 - Testing with [pytest][pytest]
-- Code coverage with [Coverage.py][Coverage.py]
-- Coverage reporting with [Codecov][Codecov]
-- Command-line interface with [Click][Click]
+- Code coverage with [Coverage.py][coverage.py]
+- Coverage reporting with [Codecov][codecov]
+- Command-line interface with [Click][click]
 - Static type-checking with [mypy][mypy]
-- Runtime type-checking with [Typeguard][Typeguard]
+- Runtime type-checking with [Typeguard][typeguard]
 - Check documentation examples with [xdoctest][xdoctest]
 - Generate API documentation with [autodoc][autodoc] and [napoleon][napoleon]
 - Generate command-line reference with [sphinx-click][sphinx-click]
-- Manage project labels with [GitHub Labeler][GitHub Labeler]
+- Manage project labels with [GitHub Labeler][github labeler]
 
 The template supports Python 3.9, 3.10, 3.11, 3.12 and 3.13.
 

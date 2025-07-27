@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'pyproject.toml'  # Only trigger when version changes
+      - "pyproject.toml" # Only trigger when version changes
 
 jobs:
   release:
@@ -59,14 +59,14 @@ jobs:
           release_name: cookiecutter-henrylab v${{ steps.get_version.outputs.PROJECT_VERSION }}
           body: |
             ## Cookiecutter Template Release v${{ steps.get_version.outputs.PROJECT_VERSION }}
-            
+
             This release contains updates to the cookiecutter template for scientific Python projects.
-            
+
             ### Usage
             ```bash
             cookiecutter gh:chenry/cookiecutter-henrylab
             ```
-            
+
             ### Changes
             See the [changelog](https://github.com/chenry/cookiecutter-henrylab/releases) for details.
           draft: false
