@@ -8,8 +8,8 @@ on:
 
 jobs:
   tests:
-    name: ${{"{{"}} matrix.session {{"}}"}} ${{"{{"}} matrix.python {{"}}"}} / ${{"{{"}} matrix.os {{"}}"}}
-    runs-on: ${{"{{"}} matrix.os {{"}}"}}
+    name: {% raw %}${{ matrix.session }}{% endraw %} {% raw %}${{ matrix.python }}{% endraw %} / {% raw %}${{ matrix.os }}{% endraw %}
+    runs-on: {% raw %}${{ matrix.os }}{% endraw %}
     strategy:
       fail-fast: false
       matrix:
@@ -17,7 +17,7 @@ jobs:
           - { python: "3.9", os: "ubuntu-latest", session: "mypy" }
 
     env:
-      NOXSESSION: ${{"{{"}} matrix.session {{"}}"}}
+      NOXSESSION: {% raw %}${{ matrix.session }}{% endraw %}
       FORCE_COLOR: "1"
       PRE_COMMIT_COLOR: "always"
 
@@ -25,10 +25,10 @@ jobs:
       - name: Check out the repository
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{"{{"}} matrix.python {{"}}"}}
+      - name: Set up Python {% raw %}${{ matrix.python }}{% endraw %}
         uses: actions/setup-python@v5
         with:
-          python-version: ${{"{{"}} matrix.python {{"}}"}}
+          python-version: {% raw %}${{ matrix.python }}{% endraw %}
 
       - name: Install uv
         uses: astral-sh/setup-uv@v5
@@ -50,7 +50,7 @@ jobs:
           python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
-          result = "${{ "{{" }} runner.os {{ "}}" }}-{}-{}-pre-commit".format(python, digest[:8])
+          result = "{% raw %}${{ runner.os }}{% endraw %}-{}-{}-pre-commit".format(python, digest[:8])
 
           print(f"result={result}")
 
@@ -59,19 +59,19 @@ jobs:
         if: matrix.session == 'pre-commit'
         with:
           path: ~/.cache/pre-commit
-          key: ${{ "{{" }} steps.pre-commit-cache.outputs.result {{ "}}" }}-${{ "{{" }} hashFiles('.pre-commit-config.yaml') {{ "}}" }}
+          key: {% raw %}${{ steps.pre-commit-cache.outputs.result }}{% endraw %}-{% raw %}${{ hashFiles('.pre-commit-config.yaml') }}{% endraw %}
           restore-keys: |
-            ${{ "{{" }} steps.pre-commit-cache.outputs.result {{ "}}" }}-
+            {% raw %}${{ steps.pre-commit-cache.outputs.result }}{% endraw %}-
 
       - name: Run Nox
         run: |
-          uv run python -m nox --python=${{ "{{" }} matrix.python {{ "}}" }}
+          uv run python -m nox --python={% raw %}${{ matrix.python }}{% endraw %}
 
       - name: Upload coverage data
         if: always() && matrix.session == 'tests'
         uses: "actions/upload-artifact@v4"
         with:
-          name: coverage-data-${{"{{"}} matrix.session {{"}}"}}-${{"{{"}} matrix.python {{"}}"}}-${{"{{"}} matrix.os {{"}}"}}
+          name: coverage-data-{% raw %}${{ matrix.session }}{% endraw %}-{% raw %}${{ matrix.python }}{% endraw %}-{% raw %}${{ matrix.os }}{% endraw %}
           path: ".coverage.*"
           if-no-files-found: ignore
           include-hidden-files: true
@@ -127,5 +127,5 @@ jobs:
       - name: Upload coverage report
         uses: codecov/codecov-action@v4.5.0
         env:
-          CODECOV_TOKEN: ${{ "{{" }} secrets.CODECOV_TOKEN {{ "}}" }}
+          CODECOV_TOKEN: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
           file: ./coverage.xml

@@ -87,10 +87,10 @@ jobs:
         if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
-          key: ${{ "{{" }} steps.cache_key.outputs.cache_key_result {{ "}}" }}-${{ "{{" }} hashFiles('../argonne-project/.pre-commit-config.yaml') {{ "}}" }}
+          key: ${{ steps.cache_key.outputs.cache_key_result }}-${{ hashFiles('../argonne-project/.pre-commit-config.yaml') }}
           restore-keys: |
-            ${{ "{{" }} steps.cache_key.outputs.cache_key_result {{ "}}" }}-
+            ${{ steps.cache_key.outputs.cache_key_result }}-
 
       - name: Run test suite using Nox
         working-directory: ../argonne-project
-        run: uv run nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
+        run: uv run nox --force-color --python=${{ matrix.python-version }}
