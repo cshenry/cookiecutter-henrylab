@@ -13,7 +13,7 @@
 [![Ruff codestyle][ruff badge]][ruff project]
 
 > **A scientific Python project developed at Argonne National Laboratory**
-> 
+>
 > This project follows best practices for reproducible, portable, and maintainable scientific software development.
 
 ## Features
@@ -21,15 +21,15 @@
 - **Modern Python Development**: Built with `uv` for fast dependency management and packaging
 - **Code Quality**: Comprehensive linting with `ruff`, type checking with `mypy`, and testing with `pytest`
 - **Scientific Workflows**: Ready for data analysis, computational research, and scientific computing
-{% if cookiecutter.use_fastapi == "true" -%}
+  {% if cookiecutter.use_fastapi == "true" -%}
 - **REST API**: FastAPI-based web service for exposing computational capabilities
-{%- endif %}
-{% if cookiecutter.use_docker == "true" -%}
+  {%- endif %}
+  {% if cookiecutter.use_docker == "true" -%}
 - **Containerization**: Docker support for reproducible deployment and environment isolation
-{%- endif %}
-{% if cookiecutter.use_notebooks == "true" -%}
+  {%- endif %}
+  {% if cookiecutter.use_notebooks == "true" -%}
 - **Jupyter Integration**: Structured notebook directory for exploratory analysis and documentation
-{%- endif %}
+  {%- endif %}
 - **Documentation**: Automated documentation with Sphinx and Read the Docs
 - **CI/CD**: GitHub Actions for automated testing, linting, and deployment
 
@@ -73,6 +73,7 @@ $ {{cookiecutter.project_name}} --help
 ```
 
 {% if cookiecutter.use_fastapi == "true" -%}
+
 ### API Service
 
 Start the FastAPI development server:
@@ -85,6 +86,7 @@ The API will be available at `http://localhost:8000` with interactive documentat
 
 {%- endif %}
 {% if cookiecutter.use_notebooks == "true" -%}
+
 ### Jupyter Notebooks
 
 Start Jupyter for exploratory analysis:
@@ -97,6 +99,7 @@ See `notebooks/README.md` for more information about the notebook structure and 
 
 {%- endif %}
 {% if cookiecutter.use_docker == "true" -%}
+
 ### Docker
 
 Build and run with Docker:
@@ -126,7 +129,7 @@ please [file an issue] along with a detailed description.
 
 ## Credits
 
-This project was generated from Christopher Henry's [cookiecutter-henry-hypermodern-python] template, 
+This project was generated from Christopher Henry's [cookiecutter-henry-hypermodern-python] template,
 which is based on [@cjolowicz]'s [uv hypermodern python cookiecutter] template.
 
 **Developed at Argonne National Laboratory**

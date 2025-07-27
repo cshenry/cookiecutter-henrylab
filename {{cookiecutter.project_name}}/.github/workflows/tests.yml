@@ -59,7 +59,12 @@ jobs:
         if: matrix.session == 'pre-commit'
         with:
           path: ~/.cache/pre-commit
-          key: {{ "${{ steps.pre-commit-cache.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}" }}
+          key:
+            {
+              {
+                "${{ steps.pre-commit-cache.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}",
+              },
+            }
           restore-keys: |
             {{ "${{ steps.pre-commit-cache.outputs.result }}-" }}
 
@@ -127,5 +132,5 @@ jobs:
       - name: Upload coverage report
         uses: codecov/codecov-action@v4.5.0
         env:
-          CODECOV_TOKEN: {{ "${{ secrets.CODECOV_TOKEN }}" }}
+          CODECOV_TOKEN: { { "${{ secrets.CODECOV_TOKEN }}" } }
           file: ./coverage.xml

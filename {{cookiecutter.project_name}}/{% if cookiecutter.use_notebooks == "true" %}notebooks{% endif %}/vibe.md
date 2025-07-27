@@ -1,53 +1,57 @@
 # Vibe - Exploratory Prompts
 
-*Use this template to capture ideas, hypotheses, and experimental plans before diving into code.*
+_Use this template to capture ideas, hypotheses, and experimental plans before diving into code._
 
 ## Project Context
-**Date**: 
+
+**Date**:
 **Project**: {{cookiecutter.friendly_name}}
-**Research Question**: 
+**Research Question**:
 
 ## Current Understanding
-*What do we know so far?*
 
+_What do we know so far?_
 
 ## Hypotheses
-*What do we think might be true?*
 
-1. 
-2. 
-3. 
+_What do we think might be true?_
+
+1.
+2.
+3.
 
 ## Experiments to Try
-*What experiments could test our hypotheses?*
 
-- [ ] 
-- [ ] 
-- [ ] 
+_What experiments could test our hypotheses?_
+
+- [ ]
+- [ ]
+- [ ]
 
 ## Data Needs
-*What data do we need to answer our questions?*
 
+_What data do we need to answer our questions?_
 
 ## Expected Outcomes
-*What would we expect to see if our hypotheses are correct?*
 
+_What would we expect to see if our hypotheses are correct?_
 
 ## Success Criteria
-*How will we know if we've made progress?*
 
+_How will we know if we've made progress?_
 
 ## Next Steps
-*What are the immediate next actions?*
 
-1. 
-2. 
-3. 
+_What are the immediate next actions?_
+
+1.
+2.
+3.
 
 ## Notes & Observations
-*Capture any additional thoughts, observations, or insights*
 
+_Capture any additional thoughts, observations, or insights_
 
 ---
 
-*This template helps organize thinking before jumping into analysis. Copy this file for each new research direction or experiment.*
+_This template helps organize thinking before jumping into analysis. Copy this file for each new research direction or experiment._

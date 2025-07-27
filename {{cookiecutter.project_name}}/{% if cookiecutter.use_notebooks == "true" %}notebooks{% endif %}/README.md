@@ -11,11 +11,13 @@ This directory contains Jupyter notebooks for exploratory data analysis, experim
 ## Usage
 
 1. Install Jupyter in your development environment:
+
    ```bash
    uv add --group dev jupyter notebook
    ```
 
 2. Start the Jupyter server:
+
    ```bash
    jupyter notebook
    ```
