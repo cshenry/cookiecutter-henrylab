@@ -33,7 +33,7 @@ jobs:
 
       - name: Create git repository
         if: matrix.os != 'windows-latest'
-        working-directory: argonne-project
+        working-directory: ../argonne-project
         run: |
           git init
           git config --local user.name "GitHub Action"
@@ -43,7 +43,7 @@ jobs:
 
       - name: Create git repository (Windows)
         if: matrix.os == 'windows-latest'
-        working-directory: argonne-project
+        working-directory: ../argonne-project
         run: |
           git init
           git config --local user.name "GitHub Action"
@@ -59,18 +59,18 @@ jobs:
         uses: astral-sh/setup-uv@v5
 
       - name: Create uv environment
-        working-directory: argonne-project
+        working-directory: ../argonne-project
         run: uv venv
 
       - name: Install dependencies using uv
-        working-directory: argonne-project
+        working-directory: ../argonne-project
         run: uv pip install .
 
       - name: Compute cache key for pre-commit
         if: matrix.os != 'windows-latest'
         id: cache_key
         shell: python
-        working-directory: argonne-project
+        working-directory: ../argonne-project
         run: |
           import hashlib
           import sys
@@ -87,10 +87,10 @@ jobs:
         if: matrix.os != 'windows-latest'
         with:
           path: ~/.cache/pre-commit
-          key: ${{ steps.cache_key.outputs.cache_key_result }}-${{ hashFiles('argonne-project/.pre-commit-config.yaml') }}
+          key: ${{ "{{" }} steps.cache_key.outputs.cache_key_result {{ "}}" }}-${{ "{{" }} hashFiles('../argonne-project/.pre-commit-config.yaml') {{ "}}" }}
           restore-keys: |
-            ${{ steps.cache_key.outputs.cache_key_result }}-
+            ${{ "{{" }} steps.cache_key.outputs.cache_key_result {{ "}}" }}-
 
       - name: Run test suite using Nox
-        working-directory: argonne-project
-        run: uv run nox --force-color --python=${{ matrix.python-version }}
+        working-directory: ../argonne-project
+        run: uv run nox --force-color --python=${{ "{{" }} matrix.python-version {{ "}}" }}
