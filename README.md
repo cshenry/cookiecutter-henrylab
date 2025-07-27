@@ -112,3 +112,4 @@ The template supports Python 3.9, 3.10, 3.11, 3.12 and 3.13.
 [testpypi]: https://test.pypi.org/
 [typeguard]: https://github.com/agronholm/typeguard
 [xdoctest]: https://github.com/Erotemic/xdoctest
+Testing documentation build fix
