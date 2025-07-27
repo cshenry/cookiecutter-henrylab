@@ -50,7 +50,7 @@ jobs:
           python = "py{}.{}".format(*sys.version_info[:2])
           payload = sys.version.encode() + sys.executable.encode()
           digest = hashlib.sha256(payload).hexdigest()
-          result = {{ '"${{ runner.os }}-{}-{}-pre-commit".format(python, digest[:8])' }}
+          result = "${{ "{{" }} runner.os {{ "}}" }}-{}-{}-pre-commit".format(python, digest[:8])
 
           print(f"result={result}")
 
@@ -59,18 +59,13 @@ jobs:
         if: matrix.session == 'pre-commit'
         with:
           path: ~/.cache/pre-commit
-          key:
-            {
-              {
-                "${{ steps.pre-commit-cache.outputs.result }}-${{ hashFiles('.pre-commit-config.yaml') }}",
-              },
-            }
+          key: ${{ "{{" }} steps.pre-commit-cache.outputs.result {{ "}}" }}-${{ "{{" }} hashFiles('.pre-commit-config.yaml') {{ "}}" }}
           restore-keys: |
-            {{ "${{ steps.pre-commit-cache.outputs.result }}-" }}
+            ${{ "{{" }} steps.pre-commit-cache.outputs.result {{ "}}" }}-
 
       - name: Run Nox
         run: |
-          uv run python -m nox --python=${{"{{"}} matrix.python {{"}}"}}
+          uv run python -m nox --python=${{ "{{" }} matrix.python {{ "}}" }}
 
       - name: Upload coverage data
         if: always() && matrix.session == 'tests'
@@ -132,5 +127,5 @@ jobs:
       - name: Upload coverage report
         uses: codecov/codecov-action@v4.5.0
         env:
-          CODECOV_TOKEN: { { "${{ secrets.CODECOV_TOKEN }}" } }
+          CODECOV_TOKEN: ${{ "{{" }} secrets.CODECOV_TOKEN {{ "}}" }}
           file: ./coverage.xml
